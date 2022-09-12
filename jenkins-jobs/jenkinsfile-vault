@@ -8,7 +8,7 @@ pipeline {
     parameters {
         string description: 'Organization name of the node', name: 'org_name', trim: true
         string description: 'Environment (dev | test | prod)', name: 'env', trim: true
-        string description: 'Custom Name to be added for Job Template Name', name: 'customName', trim: true
+        string defaultValue: '', description: 'Custom Name to be added for Job Template Name (AWX)', name: 'customName', trim: true
         choice choices: ['vault-deploy', 'vault-cleanup'], description: 'Choose setup/clean vault instance', name: 'deploy_action'
         }
     stages {
