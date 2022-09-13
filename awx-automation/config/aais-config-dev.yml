@@ -1,6 +1,6 @@
-ordererorg_domain: "nd-poc.uim.openidl.org"
-domain: "nd-poc.uim.openidl.org"
-internal_domain: "internal.nd-poc.uim.openidl.org"
+ordererorg_domain: "aais.nd-poc.uim.openidl.org"
+domain: "aais.nd-poc.uim.openidl.org"
+internal_domain: "aais.internal.nd-poc.uim.openidl.org"
 node_type: "aais"
 network:
   org_name: "aais"
