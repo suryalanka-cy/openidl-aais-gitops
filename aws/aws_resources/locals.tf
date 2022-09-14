@@ -20,7 +20,7 @@ locals {
   #bastion_host_userdata = filebase64("resources/bootstrap_scripts/bastion_host.sh")
   worker_nodes_userdata = filebase64("resources/bootstrap_scripts/worker_nodes.sh")
   bastion_userdata = templatefile("resources/bootstrap_scripts/bastion_host.tftpl",
-    { eip_id = "${aws_eip.bastion_host_eip[0].allocation_id}",
+    var.create_bastion_host ? { eip_id = "${aws_eip.bastion_host_eip[0].allocation_id}",
       region = "${var.aws_region}"
     })
   #sub domain specific
@@ -43,7 +43,7 @@ locals {
   client_callback_urls         = var.aws_env == "prod" ? ["https://openidl.${local.public_domain}/callback", "https://openidl.${local.public_domain}/redirect"] : ["https://openidl.${var.aws_env}.${local.public_domain}/callback", "https://openidl.${var.aws_env}.${local.public_domain}/redirect"]
   client_default_redirect_url  = var.aws_env == "prod" ? "https://openidl.${local.public_domain}/redirect" : "https://openidl.${var.aws_env}.${local.public_domain}/redirect" #redirect url
   client_logout_urls           = var.aws_env == "prod" ? ["https://openidl.${local.public_domain}/signout"] : ["https://openidl.${var.aws_env}.${local.public_domain}/signout"] #logout url
-  cognito_domain               = var.domain_info.sub_domain_name == "" ? local.temp_domain[0] : "${var.domain_info.sub_domain_name}-${local.temp_domain[0]}"
+  cognito_domain               = var.domain_info.sub_domain_name == "" ? local.temp_domain[0]-var.aws_env : "${var.domain_info.sub_domain_name}-${local.temp_domain[0]}"
 
   #Lambda function related
   config-intake = templatefile("resources/config-intake.tftpl",
