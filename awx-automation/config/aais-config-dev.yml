@@ -1,6 +1,6 @@
-ordererorg_domain: "aais.nd-poc.uim.openidl.org"
-domain: "aais.nd-poc.uim.openidl.org"
-internal_domain: "aais.internal.nd-poc.uim.openidl.org"
+ordererorg_domain: "aais.uim.openidl.org"
+domain: "aais.uim.openidl.org"
+internal_domain: "aais.internal.uim.openidl.org"
 node_type: "aais"
 network:
   org_name: "aais"
@@ -8,7 +8,7 @@ network:
   ordererorg_name: "ordererorg"
   organizations:
     - name: "analytics"
-      domain: "analytics.nd-poc.uim.openidl.org"
+      domain: "analytics.uim.openidl.org"
   channels:
   - name: defaultchannel
     chaincode:
