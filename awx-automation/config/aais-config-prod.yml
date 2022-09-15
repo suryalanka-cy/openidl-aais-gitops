@@ -1,6 +1,6 @@
 ordererorg_domain: "aais.uim.openidl.org"
 domain: "aais.uim.openidl.org"
-internal_domain: "internal.aais.uim.openidl.org"
+internal_domain: "aais.internal.uim.openidl.org"
 node_type: "aais"
 network:
   org_name: "aais"
