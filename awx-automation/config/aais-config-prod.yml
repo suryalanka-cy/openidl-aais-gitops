@@ -1,6 +1,6 @@
 ordererorg_domain: "aais.uim.openidl.org"
 domain: "aais.uim.openidl.org"
-internal_domain: "internal.aais.uim.openidl.org"
+internal_domain: "aais.internal.uim.openidl.org"
 node_type: "aais"
 network:
   org_name: "aais"
@@ -14,13 +14,13 @@ network:
     chaincode:
       name: openidl-cc-default
       repo_url: github.com/openidl-org/openidl-main.git
-      repo_branch: develop
+      repo_branch: openidl-nd-poc-main
       repo_path: openidl-chaincode/chaincode/openidl
   - name: anal-aais
     chaincode:
       name: openidl-cc-aais-carriers
       repo_url: github.com/openidl-org/openidl-main.git
-      repo_branch: develop
+      repo_branch: openidl-nd-poc-main
       repo_path: openidl-chaincode/chaincode/openidl
       collectionconfig:
         - name: "anal_aais_pdc"
