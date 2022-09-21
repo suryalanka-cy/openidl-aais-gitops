@@ -9,6 +9,8 @@ network:
   organizations:
     - name: "analytics"
       domain: "analytics.uim.openidl.org"
+    - name: "carrier01"
+      domain: "carrier01.uim.openidl.org"
   channels:
   - name: defaultchannel
     chaincode:
@@ -25,3 +27,12 @@ network:
       collectionconfig:
         - name: "anal_aais_pdc"
           policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
+  - name: anal-carr01
+    chaincode:
+      name: openidl-cc-aais-carriers
+      repo_url: github.com/openidl-org/openidl-main.git
+      repo_branch: openidl-nd-poc-main
+      repo_path: openidl-chaincode/chaincode/openidl
+      collectionconfig:
+        - name: "anal_carr01_pdc"
+          policy: "OR('analyticsMSP.member', 'carrier01MSP.member')"
