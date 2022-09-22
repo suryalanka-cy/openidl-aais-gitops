@@ -1,0 +1,99 @@
+global:
+    clusterurl: analytics.uim.openidl.org
+    appsecret: apps-secret
+    configpath: config-analytics
+    datacallapp:
+        install: true
+        port: 8080
+        targetport: 8080
+        servicename: data-call-app-service
+        ingressenabled: true
+        ingresshostname: data-call-app-service.prod.analytics.internal.uim.openidl.org
+        publicingresshostname: data-call-app-service.prod.analytics.uim.openidl.org
+        image:
+            repository: ghcr.io/openidl-org/openidl-data-call-app
+            pullPolicy: IfNotPresent
+            tag: 14-openidl-nd-poc-main-634b183-092220221653
+    utilities:
+        install: true
+        port: 8080
+        targetport: 8080
+        servicename: utilities-service
+        ingressenabled: true
+        ingresshostname: utilities-service.prod.analytics.internal.uim.openidl.org
+        publicingresshostname: utilities-service.prod.analytics.uim.openidl.org
+        image:
+            repository: ghcr.io/openidl-org/openidl-utilities
+            pullPolicy: IfNotPresent
+            tag: 20-openidl-nd-poc-main-634b183-092220221658
+    ui:
+        install: true
+        servicename: ui-service
+        port: 8080
+        targetport: 8080
+        ingressenabled: true
+        ingresshostname: openidl.prod.analytics.uim.openidl.org
+        image:
+            repository: ghcr.io/openidl-org/openidl-ui
+            pullPolicy: IfNotPresent
+            tag: 16-openidl-nd-poc-main-634b183-092220221659
+    datacallmoodlistener:
+        install: true
+        port: 8080
+        targetport: 8080
+        servicename: data-call-mood-listener-service
+        image:
+            repository: ghcr.io/openidl-org/openidl-data-call-mood-listener
+            pullPolicy: IfNotPresent
+            tag: 7-openidl-nd-poc-main-634b183-092220221903
+    transactionaldataeventlistener:
+        install: true
+        port: 8080
+        targetport: 8080
+        servicename: transactional-data-event-listener-service
+        image:
+            repository: ghcr.io/openidl-org/openidl-main/openidl-transactional-data-event-listener
+            pullPolicy: IfNotPresent
+            tag: 8-openidl-nd-poc-main-634b183-092220221904
+    datacallprocessor:
+        install: false
+        port: 8080
+        targetport: 8080
+        servicename: data-call-processor-service
+        image:
+            repository: ghcr.io/openidl-org/openidl-data-call-processor
+            pullPolicy: IfNotPresent
+            tag: 5-cognito-fabric-node14-helm-f84a367-093020211950
+    insurancedatamanager:
+        install: false
+        port: 8080
+        targetport: 8080
+        servicename: insurance-data-manager-service
+        ingressenabled: false
+        ingresshostname: insurance-data-manager-service.prod.analytics.uim.openidl.org
+        image:
+            repository: ghcr.io/openidl-org/openidl-insurance-data-manager
+            pullPolicy: IfNotPresent
+            tag: 5-cognito-fabric-node14-helm-f84a367-093020211950
+    upload:
+        install: false
+        port: 80
+        targetport: 80
+        servicename: upload-service
+        image:
+            repository: ghcr.io/openidl-org/openidl-upload
+            pullPolicy: IfNotPresent
+            tag: latest
+    carrierui:
+        install: false
+        servicename: carrier-ui-service
+        port: 8080
+        targetport: 8080
+        ingressenabled: false
+        ingresshostname: openidl.prod.analytics.uim.openidl.org
+        image:
+            repository: ghcr.io/openidl-org/openidl-carrier-ui
+            pullPolicy: IfNotPresent
+            tag: 9-cognito-fabric-node14-helm-f84a367-093020211950
+    secrets:
+        install: true
