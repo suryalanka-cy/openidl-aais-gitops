@@ -11,7 +11,7 @@ global:
         ingresshostname: data-call-app-service.prod.analytics.internal.uim.openidl.org
         publicingresshostname: data-call-app-service.prod.analytics.uim.openidl.org
         image:
-            repository: ghcr.io/openidl-org/openidl-data-call-app
+            repository: ghcr.io/openidl-org/openidl-main/openidl-data-call-app
             pullPolicy: IfNotPresent
             tag: 14-openidl-nd-poc-main-634b183-092220221653
     utilities:
@@ -23,7 +23,7 @@ global:
         ingresshostname: utilities-service.prod.analytics.internal.uim.openidl.org
         publicingresshostname: utilities-service.prod.analytics.uim.openidl.org
         image:
-            repository: ghcr.io/openidl-org/openidl-utilities
+            repository: ghcr.io/openidl-org/openidl-main/openidl-utilities
             pullPolicy: IfNotPresent
             tag: 20-openidl-nd-poc-main-634b183-092220221658
     ui:
@@ -34,7 +34,7 @@ global:
         ingressenabled: true
         ingresshostname: openidl.prod.analytics.uim.openidl.org
         image:
-            repository: ghcr.io/openidl-org/openidl-ui
+            repository: ghcr.io/openidl-org/openidl-main/openidl-org/openidl-ui
             pullPolicy: IfNotPresent
             tag: 16-openidl-nd-poc-main-634b183-092220221659
     datacallmoodlistener:
@@ -43,7 +43,7 @@ global:
         targetport: 8080
         servicename: data-call-mood-listener-service
         image:
-            repository: ghcr.io/openidl-org/openidl-data-call-mood-listener
+            repository: ghcr.io/openidl-org/openidl-main/openidl-data-call-mood-listener
             pullPolicy: IfNotPresent
             tag: 7-openidl-nd-poc-main-634b183-092220221903
     transactionaldataeventlistener:
@@ -61,7 +61,7 @@ global:
         targetport: 8080
         servicename: data-call-processor-service
         image:
-            repository: ghcr.io/openidl-org/openidl-data-call-processor
+            repository: ghcr.io/openidl-org/openidl-main/openidl-data-call-processor
             pullPolicy: IfNotPresent
             tag: 5-cognito-fabric-node14-helm-f84a367-093020211950
     insurancedatamanager:
@@ -72,7 +72,7 @@ global:
         ingressenabled: false
         ingresshostname: insurance-data-manager-service.prod.analytics.uim.openidl.org
         image:
-            repository: ghcr.io/openidl-org/openidl-insurance-data-manager
+            repository: ghcr.io/openidl-org/openidl-main/openidl-insurance-data-manager
             pullPolicy: IfNotPresent
             tag: 5-cognito-fabric-node14-helm-f84a367-093020211950
     upload:
@@ -81,7 +81,7 @@ global:
         targetport: 80
         servicename: upload-service
         image:
-            repository: ghcr.io/openidl-org/openidl-upload
+            repository: ghcr.io/openidl-org/openidl-main/openidl-upload
             pullPolicy: IfNotPresent
             tag: latest
     carrierui:
@@ -92,7 +92,7 @@ global:
         ingressenabled: false
         ingresshostname: openidl.prod.analytics.uim.openidl.org
         image:
-            repository: ghcr.io/openidl-org/openidl-carrier-ui
+            repository: ghcr.io/openidl-org/openidl-main/openidl-carrier-ui
             pullPolicy: IfNotPresent
             tag: 9-cognito-fabric-node14-helm-f84a367-093020211950
     secrets:
