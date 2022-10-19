@@ -1,0 +1,54 @@
+ordererorg_domain: "aais.uim.openidl.org"
+domain: "analytics.uim.openidl.org"
+internal_domain: "analytics.internal.uim.openidl.org"
+node_type: "analytics"
+network:
+  org_name: "analytics"
+  ordererorg: "false"
+  ordererorg_name: "ordererorg"
+  organizations:
+    - name: ""
+      domain: ""
+  channels:
+  - name: defaultchannel
+    chaincode:
+      name: openidl-cc-default
+      repo_url: github.com/openidl-org/openidl-main.git
+      repo_branch: openidl-nd-poc-main
+      repo_path: openidl-chaincode/chaincode/openidl
+  - name: anal-aais
+    chaincode:
+      name: openidl-cc-aais-carriers
+      repo_url: github.com/openidl-org/openidl-main.git
+      repo_branch: openidl-nd-poc-main
+      repo_path: openidl-chaincode/chaincode/openidl
+      collectionconfig:
+        - name: "anal_aais_pdc"
+          policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
+  - name: anal-ca01
+    chaincode:
+      name: openidl-cc-aais-carriers
+      repo_url: github.com/openidl-org/openidl-main.git
+      repo_branch: openidl-nd-poc-main
+      repo_path: openidl-chaincode/chaincode/openidl
+      collectionconfig:
+        - name: "anal_ca01_pdc"
+          policy: "OR('analyticsMSP.member', 'ca01MSP.member')"
+  - name: anal-ca02
+    chaincode:
+      name: openidl-cc-aais-carriers
+      repo_url: github.com/openidl-org/openidl-main.git
+      repo_branch: openidl-nd-poc-main
+      repo_path: openidl-chaincode/chaincode/openidl
+      collectionconfig:
+        - name: "anal_ca02_pdc"
+          policy: "OR('analyticsMSP.member', 'ca02MSP.member')"
+  - name: anal-ca03
+    chaincode:
+      name: openidl-cc-aais-carriers
+      repo_url: github.com/openidl-org/openidl-main.git
+      repo_branch: openidl-nd-poc-main
+      repo_path: openidl-chaincode/chaincode/openidl
+      collectionconfig:
+        - name: "anal_ca03_pdc"
+          policy: "OR('analyticsMSP.member', 'ca03MSP.member')"
