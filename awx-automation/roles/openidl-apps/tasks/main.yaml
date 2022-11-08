@@ -7,6 +7,7 @@
   file:
     path: /tmp/openidl-code/
     state: absent
+  become: yes
 
 - name: Create a openidl k8s namespace
   community.kubernetes.k8s:
