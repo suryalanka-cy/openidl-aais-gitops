@@ -14,7 +14,7 @@ pipeline {
         string description: 'Environment (dev | test | prod)', name: 'env', trim: true
         string defaultValue: '', description: 'Custom Name to be added for Job Template Name (AWX)', name: 'jobPrefix', trim: true
         choice choices: ['vault-deploy', 'vault-cleanup'], description: 'Choose setup/clean vault instance', name: 'deploy_action'
-        }
+    }
     stages {
         stage('Prepare') {
             steps {
