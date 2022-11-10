@@ -13,7 +13,7 @@ global:
         image:
             repository: ghcr.io/openidl-org/openidl-main/openidl-data-call-app
             pullPolicy: IfNotPresent
-            tag: 14-openidl-nd-poc-main-634b183-092220221653
+            tag: 19-npm-error-9b6d860-110820222048
     utilities:
         install: true
         port: 8080
@@ -25,7 +25,7 @@ global:
         image:
             repository: ghcr.io/openidl-org/openidl-main/openidl-utilities
             pullPolicy: IfNotPresent
-            tag: 20-openidl-nd-poc-main-634b183-092220221658
+            tag: 27-npm-error-9b6d860-110820222100
     ui:
         install: true
         servicename: ui-service
@@ -36,7 +36,7 @@ global:
         image:
             repository: ghcr.io/openidl-org/openidl-main/openidl-org/openidl-ui
             pullPolicy: IfNotPresent
-            tag: 16-openidl-nd-poc-main-634b183-092220221659
+            tag: 31-npm-error-9b6d860-110820222049
     datacallmoodlistener:
         install: true
         port: 8080
@@ -45,16 +45,18 @@ global:
         image:
             repository: ghcr.io/openidl-org/openidl-main/openidl-data-call-mood-listener
             pullPolicy: IfNotPresent
-            tag: 7-openidl-nd-poc-main-634b183-092220221903
+            tag: 15-npm-error-9b6d860-110820222048
     transactionaldataeventlistener:
         install: true
         port: 8080
         targetport: 8080
         servicename: transactional-data-event-listener-service
+        ingressenabled: false
+        ingresshostname: transactional-data-event-listener-service.prod.analytics.uim.openidl.org
         image:
             repository: ghcr.io/openidl-org/openidl-main/openidl-transactional-data-event-listener
             pullPolicy: IfNotPresent
-            tag: 8-openidl-nd-poc-main-634b183-092220221904
+            tag: 15-npm-error-9b6d860-110820222049
     datacallprocessor:
         install: false
         port: 8080
@@ -63,9 +65,9 @@ global:
         image:
             repository: ghcr.io/openidl-org/openidl-main/openidl-data-call-processor
             pullPolicy: IfNotPresent
-            tag: 5-cognito-fabric-node14-helm-f84a367-093020211950
+            tag: 18-npm-error-9b6d860-110820222049
     insurancedatamanager:
-        install: false
+        install: true
         port: 8080
         targetport: 8080
         servicename: insurance-data-manager-service
@@ -74,7 +76,7 @@ global:
         image:
             repository: ghcr.io/openidl-org/openidl-main/openidl-insurance-data-manager
             pullPolicy: IfNotPresent
-            tag: 5-cognito-fabric-node14-helm-f84a367-093020211950
+            tag: 24-npm-error-9b6d860-110820222049
     upload:
         install: false
         port: 80
@@ -94,6 +96,6 @@ global:
         image:
             repository: ghcr.io/openidl-org/openidl-main/openidl-carrier-ui
             pullPolicy: IfNotPresent
-            tag: 9-cognito-fabric-node14-helm-f84a367-093020211950
+            tag: 31-npm-error-9b6d860-110820222049
     secrets:
         install: true
